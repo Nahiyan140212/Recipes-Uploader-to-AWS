@@ -7,6 +7,13 @@ import datetime
 from dotenv import load_dotenv
 from PIL import Image
 import io
+import streamlit as st
+import boto3
+import hmac
+import hashlib
+import base64
+
+
 # Function to get secrets from either Streamlit Cloud or local .env file
 def get_secret(key, default=None):
     # Try to get from Streamlit secrets
