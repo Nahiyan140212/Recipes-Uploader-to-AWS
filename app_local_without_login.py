@@ -7,23 +7,16 @@ import datetime
 from dotenv import load_dotenv
 from PIL import Image
 import io
-# Function to get secrets from either Streamlit Cloud or local .env file
-def get_secret(key, default=None):
-    # Try to get from Streamlit secrets
-    if key in st.secrets:
-        return st.secrets[key]
-    
-    # If not in Streamlit secrets, try local .env file (for development)
-    load_dotenv()
-    return os.getenv(key, default)
 
+# Load environment variables
+load_dotenv()
 
 # AWS Credentials
-AWS_ACCESS_KEY = get_secret("AWS_ACCESS_KEY")
-AWS_SECRET_KEY = get_secret("AWS_SECRET_KEY")
-S3_BUCKET_NAME = get_secret('S3_BUCKET_NAME')
-DYNAMODB_TABLE_NAME = get_secret('DYNAMODB_TABLE_NAME')
-AWS_REGION = get_secret('AWS_REGION', 'us-east-1')
+AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
+AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
+S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
+DYNAMODB_TABLE_NAME = os.getenv('DYNAMODB_TABLE_NAME')
+AWS_REGION = os.getenv('AWS_REGION', 'us-east-1')
 
 # Initialize AWS services
 s3_client = boto3.client(
