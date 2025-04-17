@@ -18,7 +18,7 @@ def get_secret(key, default=None):
     return os.getenv(key, default)
 
 # AWS Credentials
-AWS_ACCESS_KEY = get_secret'AWS_ACCESS_KEY')
+AWS_ACCESS_KEY = get_secret('AWS_ACCESS_KEY')
 AWS_SECRET_KEY = get_secret('AWS_SECRET_KEY')
 S3_BUCKET_NAME = get_secret('S3_BUCKET_NAME')
 DYNAMODB_TABLE_NAME = get_secret('DYNAMODB_TABLE_NAME')
