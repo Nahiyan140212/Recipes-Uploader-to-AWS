@@ -7,4 +7,3 @@ streamlit-authenticator==0.2.3
 streamlit-cognito-auth
 opencv-python
 moviepy
-streamlit-components
