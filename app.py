@@ -799,7 +799,7 @@ def add_recipe_page():
         allergen_options = ["Nuts", "Gluten", "Dairy", "Eggs", "Soy", "Shellfish", "Fish", "None"]
         allergens = st.multiselect("Allergens", allergen_options)
         
-        dietary_options = ["Vegetarian", "Vegan", "Gluten-Free", "Dairy-Free", "Keto", "Low-Carb", "Paleo", "None"]
+        dietary_options = ["Halal", "Vegetarian", "Vegan", "Gluten-Free", "Dairy-Free", "Keto", "Low-Carb", "Paleo", "None"]
         dietary_restrictions = st.multiselect("Dietary Restrictions", dietary_options)
         
         tags = st.text_input("Tags (comma separated)")
@@ -970,7 +970,7 @@ def browse_recipes_page():
         with col2:
             dietary_filter = st.multiselect(
                 "Dietary Restrictions",
-                ["Vegetarian", "Vegan", "Gluten-Free", "Dairy-Free", "Keto", "Low-Carb", "Paleo"]
+                ["Halal", "Vegetarian", "Vegan", "Gluten-Free", "Dairy-Free", "Keto", "Low-Carb", "Paleo"]
             )
     
     try:
@@ -1225,7 +1225,7 @@ def edit_recipe_page():
         allergen_options = ["Nuts", "Gluten", "Dairy", "Eggs", "Soy", "Shellfish", "Fish", "None"]
         allergens = st.multiselect("Allergens", allergen_options, default=recipe.get('allergens', []))
         
-        dietary_options = ["Vegetarian", "Vegan", "Gluten-Free", "Dairy-Free", "Keto", "Low-Carb", "Paleo", "None"]
+        dietary_options = ["Halal", "Vegetarian", "Vegan", "Gluten-Free", "Dairy-Free", "Keto", "Low-Carb", "Paleo", "None"]
         dietary_restrictions = st.multiselect("Dietary Restrictions", dietary_options, default=recipe.get('dietary_restrictions', []))
         
         tags = st.text_input("Tags (comma separated)", value=', '.join(recipe.get('tags', [])))
