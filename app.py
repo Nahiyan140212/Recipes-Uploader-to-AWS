@@ -379,6 +379,40 @@ def process_video_upload(video_file, recipe_id):
         return video_url
     return None
 
+
+#I we want to upload the actual file then use this block and uncomment large_file code section and comment process_video_upload previously uncommented
+# def process_video_upload(video_file, recipe_id):
+#     """Process video upload with large file support"""
+#     if video_file:
+#         video_extension = video_file.name.split('.')[-1]
+#         video_filename = f"videos/{recipe_id}.{video_extension}"
+        
+#         # Check file size
+#         file_size_mb = video_file.size / (1024 * 1024)
+#         if file_size_mb > 200:
+#             st.warning(f"""
+#             Your video is {file_size_mb:.1f} MB, which exceeds the recommended size (200 MB).
+#             For better performance, consider:
+#             1. Uploading to YouTube and providing the link
+#             2. Compressing your video before uploading
+#             """)
+            
+#             # Use multipart upload for large files
+#             video_url = upload_large_file_to_s3(
+#                 video_file, 
+#                 S3_BUCKET_NAME, 
+#                 video_filename
+#             )
+#         else:
+#             video_url = upload_file_to_s3(
+#                 video_file, 
+#                 video_filename, 
+#                 f"video/{video_extension}"
+#             )
+        
+#         return video_url
+#     return None
+
 def test_s3_access():
     """Test S3 bucket access and configurations"""
     st.subheader("S3 Bucket Access Test")
