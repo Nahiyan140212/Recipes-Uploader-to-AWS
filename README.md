@@ -13,7 +13,7 @@ A Streamlit-based web application that allows users to create, store, and share 
 
 ## Demo
 
-Check out the live demo on Hugging Face Spaces: [Recipe Manager App](https://huggingface.co/spaces/your-username/recipe-manager-app)
+Check out the live demo on Hugging Face Spaces: [Recipe Manager App](https://sharedskillet.streamlit.app/)
 
 ## Local Development
 
